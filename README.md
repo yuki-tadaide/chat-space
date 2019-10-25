@@ -10,7 +10,7 @@
 
   ### Association
   - belongs_to : groups
-    belomgs_to : users
+    has_many : users
 
 ### usersテーブル
 <!-- ユーザー登録機能。主キー：id -->
