@@ -10,7 +10,7 @@
 
   ### Association
   - belongs_to : group
-    has_many : users
+    belongs_to : user
 
 ### usersテーブル
 <!-- ユーザー登録機能。主キー：id -->
@@ -27,25 +27,21 @@
     has_many :groups, through: :groups_users
 
 ### groupsテーブル
-<!-- グループ作成テーブル。外部キー：user_id -->
+<!-- グループ作成テーブル。外部キー：id -->
   |Column|Type|Options|
   |------|----|-------|
-  |usr_id|integer|null: false, unique: true, foreign_key: true|
-  |group_name|string|null: false, unique: true|
-  |user_name|string|null: false, unique: true|
-  |add_user_name|string|unique: true|
+  |name|string|null: false, unique: true|
 
   ### Association
     has_many : massages
     has_many : groups_users
     has_many :users, through: :groups_users
 ### messagesテーブル
-<!-- メッセージ投稿機能。外部キー：user_id,group_id -->
+<!-- メッセージ投稿機能。外部キー：id,group_id -->
   |Column|Type|Options|
   |------|----|-------|
-  |usr_id|integer|null: false, unique: true, foreign_key: true|
   |group_id|integer|null: false, foreign_key: true|
-  |message|string|null: false|
+  |message|string|
   |image|string|
 
   ### Association
