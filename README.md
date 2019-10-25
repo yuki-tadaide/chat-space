@@ -22,7 +22,7 @@
   |password|string|null: false|
 
   ### Association
-  - has_many : massages
+  - has_many : messages
     has_many : gruops_users
     has_many :groups, through: :groups_users
 
