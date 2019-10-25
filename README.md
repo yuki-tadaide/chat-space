@@ -45,7 +45,7 @@
   |usr_id|integer|null: false, unique: true, foreign_key: true|
   |group_id|integer|null: false, foreign_key: true|
   |message|string|null: false|
-  |iamge|string|
+  |image|string|
 
   ### Association
   - belongs_to : user
