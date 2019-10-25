@@ -37,10 +37,11 @@
     has_many : groups_users
     has_many :users, through: :groups_users
 ### messagesテーブル
-<!-- メッセージ投稿機能。外部キー：id,group_id -->
+<!-- メッセージ投稿機能。外部キー：user_id,,group_id -->
   |Column|Type|Options|
   |------|----|-------|
   |group_id|integer|null: false, foreign_key: true|
+  |user_id|integer|null: false, foreign_key: true|
   |message|string|
   |image|string|
 
