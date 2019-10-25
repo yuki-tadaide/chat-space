@@ -9,8 +9,8 @@
   |group_id|integer|null: false, foreign_key: true|
 
   ### Association
-  - belongs_to :group
-  - belongs_to :user
+  - has_many : groups
+    has_many : users
 
 ### usersテーブル
 <!-- ユーザー登録機能。主キー：id -->
@@ -22,8 +22,9 @@
   |password|string|null: false|
 
   ### Association
-  - has_many : groups
   - has_many : massages
+    has_many : gruops_users
+    has_many :groups, through: :groups_users
 
 ### groupsテーブル
 <!-- グループ作成テーブル。外部キー：user_id -->
@@ -35,9 +36,9 @@
   |add_user_name|string|unique: true|
 
   ### Association
-  - has_many : users
-  - has_many : massages
-
+    has_many : massages
+    has_many : groups_users
+    has_many :users, through: :groups_users
 ### messagesテーブル
 <!-- メッセージ投稿機能。外部キー：user_id,group_id -->
   |Column|Type|Options|
