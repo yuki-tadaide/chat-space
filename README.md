@@ -9,8 +9,8 @@
   |group_id|integer|null: false, foreign_key: true|
 
   ### Association
-  - has_many : groups
-    has_many : users
+  - belongs_to : groups
+    belomgs_to : users
 
 ### usersテーブル
 <!-- ユーザー登録機能。主キー：id -->
