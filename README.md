@@ -30,7 +30,7 @@
   |Column|Type|Options|
   |------|----|-------|
   |usr_id|integer|null: false, unique: true, foreign_key: true|
-  |group_name|string|null: false|
+  |group_name|string|null: false, unique: true|
   |user_name|string|null: false, unique: true|
   |add_user_name|string|unique: true|
 
